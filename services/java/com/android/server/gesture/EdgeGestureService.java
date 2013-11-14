@@ -96,6 +96,7 @@ public class EdgeGestureService extends IEdgeGestureService.Stub {
             this.positions = flags & POSITION_MASK;
             this.sensitivity = (flags & SENSITIVITY_MASK) >> SENSITIVITY_SHIFT;
             this.longLiving = (flags & LONG_LIVING) != 0;
+
         }
 
         private boolean eligibleForActivation(int positionFlag) {
@@ -205,7 +206,9 @@ public class EdgeGestureService extends IEdgeGestureService.Stub {
         synchronized(mLock) {
             mGlobalPositions = 0;
             mGlobalSensitivity = SENSITIVITY_NONE;
+
             boolean someLongLiving = false;
+
             int activePositions = 0;
             for (EdgeGestureActivationListenerRecord temp : mEdgeGestureActivationListener) {
                 mGlobalPositions |= temp.positions;
@@ -215,7 +218,9 @@ public class EdgeGestureService extends IEdgeGestureService.Stub {
                 if (temp.sensitivity != SENSITIVITY_NONE) {
                     mGlobalSensitivity = Math.max(mGlobalSensitivity, temp.sensitivity);
                 }
+
                 someLongLiving |= temp.longLiving;
+.
             }
             boolean havePositions = mGlobalPositions != 0;
             mGlobalPositions &= ~activePositions;
@@ -227,6 +232,7 @@ public class EdgeGestureService extends IEdgeGestureService.Stub {
             if (mInputFilter == null && havePositions) {
                 enforceMonitoringLocked();
             } else if (mInputFilter != null && !havePositions && !someLongLiving) {
+            } else if (mInputFilter != null && !havePositions) {
                 shutdownMonitoringLocked();
             }
         }
