@@ -85,7 +85,6 @@ oneway interface IStatusBar
      *
      * @param source the identifier for the gesture, see {@link StatusBarManager}
      */
-    void onCameraLaunchGestureDetected(int source);
     void screenPinningStateChanged(boolean enabled);
     void showCustomIntentAfterKeyguard(inout Intent intent);
 }
