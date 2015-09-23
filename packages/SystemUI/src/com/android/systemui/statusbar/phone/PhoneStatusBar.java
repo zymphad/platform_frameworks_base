@@ -3621,7 +3621,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         final boolean updateNavBar = shouldUpdateNavbar(mCurrentTheme, newTheme);
         if (newTheme != null) mCurrentTheme = (ThemeConfig) newTheme.clone();
         if (updateStatusBar) {
-            mContext.recreateTheme();
             recreateStatusBar();
             if (mNavigationBarView != null) {
                 mNavigationBarView.onRecreateStatusbar();
