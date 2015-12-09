@@ -124,4 +124,10 @@
     <string name="lockscreen_none_target">None</string>
     <string name="gestures_message">Draw your gesture here</string>
 
+    <!-- Content description of the power button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_power">Power</string>
+
+    <!-- Battery Saver QS Tile -->
+    <string name="quick_settings_battery_saver">Battery saver</string>
+    <string name="quick_settings_battery_saver_off">Battery saver off</string>
 </resources>
