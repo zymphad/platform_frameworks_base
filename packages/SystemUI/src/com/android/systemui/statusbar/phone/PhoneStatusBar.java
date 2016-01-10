@@ -968,6 +968,11 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             }
         } catch (RemoteException ex) {
             // no window manager? good luck with that
+
+        if (mNavigationBarView == null) {
+            mNavigationBarView =
+                (NavigationBarView) View.inflate(context, R.layout.navigation_bar, null);
+            mNavigationBarView.updateResources(getNavbarThemedResources());
         }
 
         if (!mRecreating) {
