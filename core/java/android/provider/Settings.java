@@ -3911,6 +3911,12 @@ public final class Settings {
         public static final String NAVBAR_LEFT_IN_LANDSCAPE = "navigation_bar_left";
 
         /**
+         * Whether to display dashboard tiles in a double line layout
+         * @hide
+         */
+        public static final String DASHBOARD_TILEVIEW_DOUBLE_LINES = "dashboard_tileview_double_lines";
+
+        /**
          * Whether to use slim recents
          * @hide
          */
