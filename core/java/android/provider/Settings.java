@@ -3916,6 +3916,12 @@ public final class Settings {
          */
         public static final String DASHBOARD_TILEVIEW_DOUBLE_LINES = "dashboard_tileview_double_lines";
 
+         /**
+          * Change the number of columns displayed in the Settings dashboard
+           * @hide
+           */
+          public static final String DASHBOARD_COLUMNS = "dashboard_columns";
+
         /**
          * Whether to use slim recents
          * @hide
